@@ -103,12 +103,19 @@ You can install CRAN packages using install.packages(). (# is the comment charac
 # install package named "randomForests" from CRAN
 install.packages("randomForests")
 ```
-You can install bioconductor packages with a specific installer script
+You can install bioconductor packages with a specific installer script or using the BiocManager package.
 ```{r,eval=FALSE}
 # get the installer package
 source("http://bioconductor.org/biocLite.R")
 # install bioconductor package "rtracklayer"
 biocLite("rtracklayer")
+```
+Using ```BiocManager```
+```{r,eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+# install bioconductor package "rtracklayer"
+BiocManager::install("rtracklayer")
 ```
 You can install packages from github using *install_github()* function from **devtools**
 ```{r,eval=FALSE}
